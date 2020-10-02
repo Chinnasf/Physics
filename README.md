@@ -7,8 +7,8 @@ This repository contains various codes and documents about pure and applied phys
 
 - **MolecularModeling**
   - `Ag_simulation.c`: C-code on molecular dynamics code simulating 64 particles of Ag inside a box. The code considers newtonian dynamics alongsine classical statistical mechanics. The code computes the evolution of kinetic energy and potential energy. Libraries used:
-    - stdio.h
-    - math.h
+    - `<stdio.h>`
+    - `<math.h>`
   - `LAMMPS_reader.py`: Python-code used to plot the results of simulations created through [LAMMPS](https://lammps.sandia.gov/). Libraries used:
     - `numpy`
     - `pandas`
