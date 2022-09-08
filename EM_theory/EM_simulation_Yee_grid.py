@@ -60,8 +60,7 @@ def EM_wave_1D(Nt, courant = 1, counter_prop=False):
         return 
 
     for n in range(Nt):
-        E[1:-1] += (Δt/(ε0*Δz))*( H[:-1] - H[1:] )
-        H += (Δt/(μ0*Δz))*( E[:-1] - E[1:] )
+        vacuumstep1d( E, H, numsteps)
         Et[n,:] = E
         if (n%10) == 9:
             plt.clf()        
