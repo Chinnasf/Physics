@@ -68,12 +68,11 @@ def compute_solid_angle(N, Rsource, sseedd):
 	r = np.sqrt(np.square(x) + np.square(y))
 	hit_index = np.where(r<Rdetect)[0]
 	Nhit = len(hit_index)
-
 	Ntot = 2*len(x)
 	Ω = 4*np.pi*Nhit/Ntot
-
 	return Ω
 #print(compute_solid_angle(1e7, 40, 71))
+
 
 
 # Solution to problem 2
@@ -85,6 +84,7 @@ def compute_sa_point_src(N, sseedd):
 		print(f"{i},{compute_solid_angle(N, i, sseedd)}")
 	return 0
 #compute_sa_point_src(1e7, 71)	
+
 
 
 # Solution to problem 3
@@ -101,10 +101,9 @@ def compute_sqr_opening(N, Rsource, sseedd, percentace = 0.75):
 
 	Ntot = 2*len(x)
 	Ω = 4*np.pi*Nsq_hit/Ntot
-
-	print(Ω)
 	return 0
 #compute_sqr_opening(1e7, 40, 71, percentace = 0.75)
+
 
 
 # Solution to problem 4
