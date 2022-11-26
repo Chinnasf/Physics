@@ -90,15 +90,12 @@ def compute_sa_point_src(N, sseedd):
 # Solution to problem 3
 def compute_sqr_opening(N, Rsource, sseedd, percentace = 0.75):
 	x,y = compute_x_y_pos(N, Rsource, sseedd)	
-
 	L = (percentace*Rdetect/2)*(2**-0.5)
-
 	df = pd.DataFrame(x,columns=["x"])
 	df["y"] = y
 	df = df[(df.x > -L) & (df.x < L)]
 	df = df[(df.y > -L) & (df.y < L)]
 	Nsq_hit = len(df)
-
 	Ntot = 2*len(x)
 	Ω = 4*np.pi*Nsq_hit/Ntot
 	return 0
