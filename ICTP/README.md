@@ -2,7 +2,7 @@
 
 ## Joint ICTP-IAEA School on AI for Nuclear, Plasma and Fusion Science | (smr 3840)
 
-[Description of Programme](https://indico.ictp.it/event/10174/other-view?view=ictptimetable)
+[Programme Description](https://indico.ictp.it/event/10174/other-view?view=ictptimetable)
 
 ---
 
