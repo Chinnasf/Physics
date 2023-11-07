@@ -7,6 +7,10 @@ Compared to the processed code using the GPU for 5000 particles.
 
 ![](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles.mp4.gif)
 
+You can also find the code to simulate the damped harmonic/anharmonic oscillator. The code is based on the [Stochastic Processes: Data Analysis and Computer Simulation](https://learning.edx.org/course/course-v1:KyotoUx+009x+1T2017/home) course. 
+
+![](https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Gifs/AHO_zeta0_005.gif)
+
 ---
 
 ### Content: OLD Description
