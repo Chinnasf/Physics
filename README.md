@@ -5,7 +5,7 @@ This repository contains various codes and documents about pure and applied phys
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/collisions_and_dist_500_particles.gif" width="500">
 </div>
 
-Compared to the processed code using the GPU for 5000 particles.
+Compared to the same code, but instead of using `numpy`, I used `PyTorch` to make use of the GPU; now, for 5000 particles.
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles.mp4.gif" width="600">
