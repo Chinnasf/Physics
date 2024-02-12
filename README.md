@@ -1,11 +1,11 @@
 # Physics
-This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies. I will focus on this repository, mainly applying GPU processing to Physics-related insights. For instance, here is an example of a simulation of gas inside a box. The following image shows the code for 500 particles processed in a CPU.  
+This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies. I will focus on this repository, mainly applying GPU processing to Physics-related insights. For instance, here is an example of a simulation of gas inside a box. The following image shows the code for 500 particles processed with CPU.  
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/collisions_and_dist_500_particles.gif" width="500">
 </div>
 
-Compared to the processed code using the GPU for 5000 particles.
+The following image was created using the same code, but instead of processing with `numpy`, I used `PyTorch` to make use of the GPU; now, for 5000 particles.
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles.mp4.gif" width="600">
