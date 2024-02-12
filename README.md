@@ -7,7 +7,7 @@ This repository contains various codes and documents about pure and applied phys
 
 The following image was created using the same code, but instead of processing with `numpy`, I used `PyTorch` to use the GPU; now, for 5000 particles.
 
-$${\color{red}Warning:$$<code style="color : red"> it may take long before loading the image.</code>
+$${\color{red}Warning:}$$ <code style="color : red"> it may take long before loading the image.</code>
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles.mp4.gif" width="600">
