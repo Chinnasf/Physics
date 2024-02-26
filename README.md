@@ -1,5 +1,7 @@
 # Physics
 
+<code style="color : red"> Warning: it may take long before all images display.</code>
+
 This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies. I will focus on this repository, mainly applying GPU processing to Physics-related insights. For instance, here is an example of a simulation of gas inside a box. The following image shows the code for 500 particles processed with CPU.  
 
 <div align="center">
@@ -7,8 +9,6 @@ This repository contains various codes and documents about pure and applied phys
 </div>
 
 The following image was created using the same code, but instead of processing with `numpy`, I used `PyTorch` to use the GPU; now, for 5000 particles.
-
-<code style="color : red"> Warning: it may take long before this image displays.</code>
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles______.gif" width="600">
