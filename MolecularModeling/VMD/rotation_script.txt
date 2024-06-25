@@ -1,0 +1,151 @@
+display resetview
+render snapshot frame_0.0.rgb
+display resetview
+rotate y by 0.0
+render snapshot frame_7.35.rgb
+display resetview
+rotate y by 7.35
+render snapshot frame_14.69.rgb
+display resetview
+rotate y by 14.69
+render snapshot frame_22.04.rgb
+display resetview
+rotate y by 22.04
+render snapshot frame_29.39.rgb
+display resetview
+rotate y by 29.39
+render snapshot frame_36.73.rgb
+display resetview
+rotate y by 36.73
+render snapshot frame_44.08.rgb
+display resetview
+rotate y by 44.08
+render snapshot frame_51.43.rgb
+display resetview
+rotate y by 51.43
+render snapshot frame_58.78.rgb
+display resetview
+rotate y by 58.78
+render snapshot frame_66.12.rgb
+display resetview
+rotate y by 66.12
+render snapshot frame_73.47.rgb
+display resetview
+rotate y by 73.47
+render snapshot frame_80.82.rgb
+display resetview
+rotate y by 80.82
+render snapshot frame_88.16.rgb
+display resetview
+rotate y by 88.16
+render snapshot frame_95.51.rgb
+display resetview
+rotate y by 95.51
+render snapshot frame_102.86.rgb
+display resetview
+rotate y by 102.86
+render snapshot frame_110.2.rgb
+display resetview
+rotate y by 110.2
+render snapshot frame_117.55.rgb
+display resetview
+rotate y by 117.55
+render snapshot frame_124.9.rgb
+display resetview
+rotate y by 124.9
+render snapshot frame_132.24.rgb
+display resetview
+rotate y by 132.24
+render snapshot frame_139.59.rgb
+display resetview
+rotate y by 139.59
+render snapshot frame_146.94.rgb
+display resetview
+rotate y by 146.94
+render snapshot frame_154.29.rgb
+display resetview
+rotate y by 154.29
+render snapshot frame_161.63.rgb
+display resetview
+rotate y by 161.63
+render snapshot frame_168.98.rgb
+display resetview
+rotate y by 168.98
+render snapshot frame_176.33.rgb
+display resetview
+rotate y by 176.33
+render snapshot frame_183.67.rgb
+display resetview
+rotate y by 183.67
+render snapshot frame_191.02.rgb
+display resetview
+rotate y by 191.02
+render snapshot frame_198.37.rgb
+display resetview
+rotate y by 198.37
+render snapshot frame_205.71.rgb
+display resetview
+rotate y by 205.71
+render snapshot frame_213.06.rgb
+display resetview
+rotate y by 213.06
+render snapshot frame_220.41.rgb
+display resetview
+rotate y by 220.41
+render snapshot frame_227.76.rgb
+display resetview
+rotate y by 227.76
+render snapshot frame_235.1.rgb
+display resetview
+rotate y by 235.1
+render snapshot frame_242.45.rgb
+display resetview
+rotate y by 242.45
+render snapshot frame_249.8.rgb
+display resetview
+rotate y by 249.8
+render snapshot frame_257.14.rgb
+display resetview
+rotate y by 257.14
+render snapshot frame_264.49.rgb
+display resetview
+rotate y by 264.49
+render snapshot frame_271.84.rgb
+display resetview
+rotate y by 271.84
+render snapshot frame_279.18.rgb
+display resetview
+rotate y by 279.18
+render snapshot frame_286.53.rgb
+display resetview
+rotate y by 286.53
+render snapshot frame_293.88.rgb
+display resetview
+rotate y by 293.88
+render snapshot frame_301.22.rgb
+display resetview
+rotate y by 301.22
+render snapshot frame_308.57.rgb
+display resetview
+rotate y by 308.57
+render snapshot frame_315.92.rgb
+display resetview
+rotate y by 315.92
+render snapshot frame_323.27.rgb
+display resetview
+rotate y by 323.27
+render snapshot frame_330.61.rgb
+display resetview
+rotate y by 330.61
+render snapshot frame_337.96.rgb
+display resetview
+rotate y by 337.96
+render snapshot frame_345.31.rgb
+display resetview
+rotate y by 345.31
+render snapshot frame_352.65.rgb
+display resetview
+rotate y by 352.65
+render snapshot frame_360.0.rgb
+display resetview
+rotate y by 360.0
