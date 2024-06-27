@@ -1,0 +1,5 @@
+# When building LAMMPS, consider:
+
+$ cd build
+$ cmake ../cmake/ -D PKG_MOLECULE=yes -D PKG_KSPACE=yes -D PKG_RIGID=yes -D PKG_EXTRA-DUMP=yes -D PKG_MC=yes -D PKG_CLASS2=yes -D PKG_EXTRA-FIX=yes -D PKG_MANYBODY=yes -D PKG_REAXFF=yes
+$ make -j 8 # 8 is the available number of processors || check yours
