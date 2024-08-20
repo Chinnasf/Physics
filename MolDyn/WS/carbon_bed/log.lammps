@@ -1,0 +1,158 @@
+LAMMPS (2 Aug 2023 - Update 3)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+boundary p p f
+units real
+atom_style full
+
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+
+pair_style lj/cut 14
+special_bonds lj 0.0 0.0 0.5
+
+read_data CARBON_BED_molecular_35A.data
+Reading data file ...
+  orthogonal box = (-1.9205 -1.579639 -43.3) to (38.0795 38.420361 56.7)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  2700 atoms
+  scanning bonds ...
+  2 = max bonds/atom
+  scanning angles ...
+  3 = max angles/atom
+  scanning dihedrals ...
+  8 = max dihedrals/atom
+  scanning impropers ...
+  3 = max impropers/atom
+  reading bonds ...
+  3885 bonds
+  reading angles ...
+  7450 angles
+  reading dihedrals ...
+  14355 dihedrals
+  reading impropers ...
+  2380 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0.5     
+  special bond factors coul:  0        0        0       
+     3 = max # of 1-2 neighbors
+     6 = max # of 1-3 neighbors
+    18 = max # of 1-4 neighbors
+    18 = max # of special neighbors
+  special bonds CPU = 0.002 seconds
+  read_data CPU = 0.086 seconds
+
+# PARAMETERS FOR A CARBON NANOTUBE WITH OPLSAA-AA FF
+pair_coeff 1 1 0.066 3.4
+bond_coeff 1 469 1.4
+angle_coeff 1 63 120
+dihedral_coeff 1 0 7.25 0 0
+improper_coeff 1 5 180
+
+group carbon_atoms type 1
+2700 atoms in group carbon_atoms
+
+
+
+
+run 0
+WARNING: No fixes with time integration, atoms won't move (src/verlet.cpp:60)
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 5 5 13
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 18.15 | 18.15 | 18.15 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0             -755.94442      590.35035     -165.59407     -8368.6394    
+Loop time of 9.53e-07 on 1 procs for 0 steps with 2700 atoms
+
+209.9% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.53e-07   |            |       |100.00
+
+Nlocal:           2700 ave        2700 max        2700 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           5780 ave        5780 max        5780 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    1.50506e+06 ave 1.50506e+06 max 1.50506e+06 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1505056
+Ave neighs/atom = 557.42815
+Ave special neighs/atom = 16.385185
+Neighbor list builds = 0
+Dangerous builds = 0
+
+# Displace all atoms to start at z = 0
+displace_atoms carbon_atoms move 0.0 0.0 -43.300000
+Displacing atoms ...
+
+# Change box dimensions to the desired size and remap atoms
+change_box all x final -20 20 y final -20 20 z final 0 100 remap
+Changing box ...
+  orthogonal box = (-20 -1.579639 -43.3) to (20 38.420361 56.7)
+  orthogonal box = (-20 -20 -43.3) to (20 20 56.7)
+  orthogonal box = (-20 -20 0) to (20 20 100)
+
+dump            dmp_nvt all custom 1 zero_C_bed.traj id element xs ys zs # file: thermal trajectory
+dump_modify     dmp_nvt element C
+
+run 0
+WARNING: No fixes with time integration, atoms won't move (src/verlet.cpp:60)
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Per MPI rank memory allocation (min/avg/max) = 18.15 | 18.15 | 18.15 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0             -755.94442      590.35035     -165.59407     -8368.6394    
+Loop time of 1.05e-06 on 1 procs for 0 steps with 2700 atoms
+
+190.5% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 1.05e-06   |            |       |100.00
+
+Nlocal:           2700 ave        2700 max        2700 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           5780 ave        5780 max        5780 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    1.50506e+06 ave 1.50506e+06 max 1.50506e+06 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1505056
+Ave neighs/atom = 557.42815
+Ave special neighs/atom = 16.385185
+Neighbor list builds = 0
+Dangerous builds = 0
+
+write_data carbon_bed.data pair ij
+System init for write_data ...
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Total wall time: 0:00:00

@@ -1,0 +1,61 @@
+# LAMMPS - CATALYST LAYER 
+units           real
+atom_style      full
+boundary        p p p
+
+bond_style 		harmonic
+angle_style 	hybrid harmonic cosine/squared
+dihedral_style 	hybrid harmonic opls
+improper_style  harmonic
+
+pair_style  	lj/cut/coul/long 10 # 10 Å for both electrostatic and non-covalent interactions
+kspace_style 	pppm 1e-5 # long-range solver for the Coulomb interactions: particle-particle-particle mesh
+
+#special_bonds   dreiding
+
+special_bonds   lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes
+pair_modify     tail yes mix arithmetic
+#dielectric      1.0 # REVISAR ESTE VALOR y el de pair_style
+
+read_data data/carbon_bed_OPLS-AA_QeD_charges.data &
+            extra/bond/per/atom 10 &
+            extra/angle/per/atom 10 &
+            extra/dihedral/per/atom 20 &
+            extra/improper/per/atom 10 &
+            extra/special/per/atom 25
+include data/system_PARMS.lammps
+
+# Fix the positions of the first two Carbon layers
+region RegionCARlayers block INF INF INF INF 10.0 14.0
+group fixedCAR region RegionCARlayers
+fix freezeCAR fixedCAR setforce 0.0 0.0 0.0
+
+# Add Polymer
+molecule NAFIONmol  data/nafion_ionomer_dreiding_FRAME170_2ndNVT.mol
+region RegionNAFION block INF INF INF INF 15 95
+create_atoms 0 random 5 17017 RegionNAFION mol NAFIONmol 71071 & 
+             overlap 1.0 maxtry 100
+
+region REGmiddleNAF block INF INF INF INF 45.0 75.0
+region REGtopNAF block INF INF INF INF 75.0 INF
+group middleNAF region REGmiddleNAF
+group topNAF region REGtopNAF
+
+displace_atoms middleNAF move 0 0 3
+
+region REGcopyNAF block INF INF INF INF 200 INF
+create_atoms 0 random 1 17017 REGcopyNAF mol NAFIONmol 17171 & 
+             overlap 1.0 maxtry 100
+group uppertopNAF region REGcopyNAF
+displace_atoms uppertopNAF move 0 0 -188
+displace_atoms topNAF move 0 0 -43
+displace_atoms middleNAF move 0 0 15
+
+# Add water
+molecule H2Omol     data/H2O-SPCFw.mol
+region REGwater block INF INF INF INF 15 100
+create_atoms 0 random 1010 87910 REGwater mol &
+    H2Omol 454756 overlap 2 maxtry 50
+
+run 0
+write_data check_status.data pair ij

@@ -1,0 +1,199 @@
+LAMMPS (2 Aug 2023 - Update 3)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# LAMMPS - CATALYST LAYER
+units           real
+atom_style      full
+boundary        p p p
+
+bond_style 		harmonic
+angle_style 	hybrid harmonic cosine/squared
+dihedral_style 	hybrid harmonic opls
+improper_style  harmonic
+
+pair_style  	lj/cut/coul/long 10 # 10 Å for both electrostatic and non-covalent interactions
+kspace_style 	pppm 1e-5 # long-range solver for the Coulomb interactions: particle-particle-particle mesh
+
+#special_bonds   dreiding
+
+special_bonds   lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes
+pair_modify     tail yes mix arithmetic
+#dielectric      1.0 # REVISAR ESTE VALOR y el de pair_style
+
+region box block -20 20 -20 20 -0 100
+create_box 8 box             bond/types 7             angle/types 5             dihedral/types 16             improper/types 1             extra/bond/per/atom 10             extra/angle/per/atom 10             extra/dihedral/per/atom 20             extra/improper/per/atom 10             extra/special/per/atom 25
+Created orthogonal box = (-20 -20 -0) to (20 20 100)
+  1 by 1 by 1 MPI processor grid
+
+
+include data/system_PARMS.lammps
+# Parameters to model the CL
+# PARAMETERS FOR A CARBON NANOTUBE WITH OPLSAA-AA FF
+
+mass  1     18.998400     # F_   | Nafion   (DREIDING)
+mass  2     12.011000     # C_3  | Nafion   (DREIDING)
+mass  3     15.999400     # O_3  | Nafion   (DREIDING)
+mass  4     15.999400     # O_2  | Nafion   (DREIDING)
+mass  5     32.060000     # S_3  | Nafion   (DREIDING)
+mass  6     12.011000     # C    | Graphite (OPLSAA-AA)
+mass  7     1.008         # H    | Water    (SPC/Fw)
+mass  8     15.999400     # O    | Water    (SPC/Fw)
+
+
+pair_coeff  1 1  0.072500     3.093200    # F_    | Nafion
+pair_coeff  2 2  0.095100     3.472990    # C_3   | Nafion
+pair_coeff  3 3  0.095700     3.033154    # O_3   | Nafion
+pair_coeff  4 4  0.095700     3.033154    # O_2   | Nafion
+pair_coeff  5 5  0.344000     3.590322    # S_3   | Nafion
+pair_coeff  6 6  0.066        3.4         # C     | Graphite (OPLSAA-AA)
+pair_coeff  7 7  0.0          0.0         # H     | Water (SPC/Fw)
+pair_coeff  8 8  0.155        3.165       # O     | Water (SPC/Fw)
+
+
+bond_coeff  1    350.000000      1.371000    # F_ C_3    | Nafion
+bond_coeff  2    350.000000      1.530000    # C_3 C_3   | Nafion
+bond_coeff  3    350.000000      1.420000    # C_3 O_3   | Nafion
+bond_coeff  4    350.000000      1.800000    # C_3 S_3   | Nafion
+bond_coeff  5    350.000000      1.590000    # O_2 S_3   | Nafion
+bond_coeff  6    469             1.4         # C-C       | Graphite (OPLSAA-AA)
+bond_coeff  7    529.581         1.012       # O-H       | Water (SPC/Fw)
+
+
+angle_coeff  1 cosine/squared 50.000000 109.47100    # X C_3 X    | Nafion   (cosine/squared)
+angle_coeff  2 cosine/squared 50.000000 104.51000    # X O_3 X    | Nafion   (cosine/squared)
+angle_coeff  3 cosine/squared 50.000000 92.100000    # X S_3 X    | Nafion   (cosine/squared)
+angle_coeff  4 harmonic       63        120          # C C C      | Graphite (harmonic)
+angle_coeff  5 harmonic       37.95     113.24       # H2O H-O-H (SPC/Fw)    (harmonic)
+
+
+dihedral_coeff  1   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  2   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  3   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  4   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  5   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  6   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  7   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff  8   harmonic   0.111111    1   3     # X C_3 O_3 X  | Nafion   (harmonic)
+dihedral_coeff  9   harmonic   0.111111    1   3     # X C_3 O_3 X  | Nafion   (harmonic)
+dihedral_coeff 10   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff 11   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff 12   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff 13   harmonic   0.111111    1   3     # X C_3 C_3 X  | Nafion   (harmonic)
+dihedral_coeff 14   harmonic   0.111111    1   3     # X C_3 S_3 X  | Nafion   (harmonic)
+dihedral_coeff 15   harmonic   0.111111    1   3     # X C_3 S_3 X  | Nafion   (harmonic)
+dihedral_coeff 16   opls       0 7.25      0   0     # C C C C      | Graphite (opls)
+
+improper_coeff 1 5 180  # C C C C | Graphite (harmonic)
+
+molecule H2Omol     data/H2O-SPCFw.mol
+Read molecule template H2Omol:
+  1 molecules
+  0 fragments
+  3 atoms with max type 8
+  2 bonds with max type 7
+  1 angles with max type 5
+  0 dihedrals with max type 0
+  0 impropers with max type 0
+molecule NAFIONmol  data/nafion_ionomer_dreiding_FRAME170_2ndNVT.mol
+Read molecule template NAFIONmol:
+  1 molecules
+  0 fragments
+  498 atoms with max type 5
+  497 bonds with max type 5
+  976 angles with max type 3
+  1383 dihedrals with max type 14
+  0 impropers with max type 0
+molecule CARBONmol  data/carbon_bed_OPLS-AA_QeD_charges.mol
+Read molecule template CARBONmol:
+  1 molecules
+  0 fragments
+  2700 atoms with max type 6
+  3885 bonds with max type 6
+  7450 angles with max type 4
+  14355 dihedrals with max type 16
+  2380 impropers with max type 1
+
+create_atoms 0 single 0 0 0 mol CARBONmol 2
+Created 2700 atoms
+  using lattice units in orthogonal box = (-20 -20 -0) to (20 20 100)
+  create_atoms CPU = 0.003 seconds
+create_atoms 0 random 30 87910 NULL mol     NAFIONmol 454756 overlap 1.5 maxtry 50
+WARNING: Only inserted 1 particles out of 30 (src/create_atoms.cpp:855)
+Created 498 atoms
+  using lattice units in orthogonal box = (-20 -20 -0) to (20 20 100)
+  create_atoms CPU = 0.012 seconds
+create_atoms 0 random 1050 87910 NULL mol     H2Omol 454756 overlap 1.5 maxtry 50
+Created 3150 atoms
+  using lattice units in orthogonal box = (-20 -20 -0) to (20 20 100)
+  create_atoms CPU = 0.080 seconds
+
+
+run 0
+WARNING: No fixes with time integration, atoms won't move (src/verlet.cpp:60)
+PPPM initialization ...
+WARNING: System is not charge neutral, net charge = -0.00137 (src/kspace.cpp:327)
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.28791097
+  grid = 30 30 60
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.0025665001
+  estimated relative force accuracy = 7.7289388e-06
+  using double precision KISS FFT
+  3d grid and FFT values/proc = 91723 54000
+Generated 28 of 28 mixed pair_coeff terms from arithmetic mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 7 7 17
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/long, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 56.03 | 56.03 | 56.03 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0              4.3238135e+10  1595.9625      4.3238136e+10  7.4119694e+10
+Loop time of 9.65e-07 on 1 procs for 0 steps with 6348 atoms
+
+103.6% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Kspace  | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.65e-07   |            |       |100.00
+
+Nlocal:           6348 ave        6348 max        6348 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:          16513 ave       16513 max       16513 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    1.21367e+06 ave 1.21367e+06 max 1.21367e+06 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1213673
+Ave neighs/atom = 191.18982
+Ave special neighs/atom = 8.8613737
+Neighbor list builds = 0
+Dangerous builds = 0
+write_data check_status.data pair ij
+System init for write_data ...
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (src/kspace.cpp:342)
+  G vector (1/distance) = 0.28791097
+  grid = 30 30 60
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.0025665001
+  estimated relative force accuracy = 7.7289388e-06
+  using double precision KISS FFT
+  3d grid and FFT values/proc = 91723 54000
+Generated 28 of 28 mixed pair_coeff terms from arithmetic mixing rule
+Total wall time: 0:00:00

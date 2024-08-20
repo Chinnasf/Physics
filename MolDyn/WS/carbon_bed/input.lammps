@@ -1,0 +1,40 @@
+boundary p p f
+units real
+atom_style full
+
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+
+pair_style lj/cut 14
+special_bonds lj 0.0 0.0 0.5
+
+read_data CARBON_BED_molecular_35A.data
+
+# PARAMETERS FOR A CARBON NANOTUBE WITH OPLSAA-AA FF
+pair_coeff 1 1 0.066 3.4
+bond_coeff 1 469 1.4
+angle_coeff 1 63 120
+dihedral_coeff 1 0 7.25 0 0
+improper_coeff 1 5 180
+
+group carbon_atoms type 1
+
+
+
+
+run 0
+
+# Displace all atoms to start at z = 0
+displace_atoms carbon_atoms move 0.0 0.0 -43.300000
+
+# Change box dimensions to the desired size and remap atoms
+change_box all x final -20 20 y final -20 20 z final 0 100 remap
+
+dump            dmp_nvt all custom 1 zero_C_bed.traj id element xs ys zs # file: thermal trajectory
+dump_modify     dmp_nvt element C
+
+run 0
+
+write_data carbon_bed.data pair ij

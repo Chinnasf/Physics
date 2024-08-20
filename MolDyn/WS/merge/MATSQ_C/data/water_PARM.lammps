@@ -1,0 +1,9 @@
+mass 8 15.9994 # H2O O (SPC/Fw)
+mass 9 1.008 # H2O H (SPC/Fw)
+
+pair_coeff 8 8 0.155 3.165  # H2O O (SPC/Fw)
+pair_coeff 9 9 0.0 0.0 # H2O H (SPC/Fw)
+
+bond_coeff 7 529.581 1.012 # H2O O-H (SPC/Fw)
+
+angle_coeff 8 37.95 113.24 # H2O H-O-H (SPC/Fw)

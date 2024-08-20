@@ -1,0 +1,20 @@
+# LAMMPS - Thermalization 
+units           real
+atom_style      full
+boundary        p p p
+
+bond_style 		harmonic
+angle_style 	cosine/squared # more complex than harmonic
+dihedral_style 	harmonic
+
+pair_style lj/cut/coul/long 10 # 10 Å for both electrostatic and non-covalent interactions
+kspace_style pppm 1e-5 # long-range solver for the Coulomb interactions: particle-particle-particle mesh
+
+special_bonds   dreiding
+pair_modify     tail yes mix arithmetic
+dielectric      1.0 
+#pair_coeff dreiding   F C O S H
+
+read_restart   restart.init_nvt
+
+write_data Equilibration_system_ij.data pair ij

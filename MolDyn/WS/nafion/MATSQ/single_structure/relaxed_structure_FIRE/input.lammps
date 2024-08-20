@@ -1,0 +1,82 @@
+# LAMMPS - Thermalization 
+units           real
+atom_style      full
+boundary        p p p
+
+bond_style     harmonic
+angle_style   cosine/squared # more complex than harmonic
+dihedral_style   harmonic
+
+pair_style lj/cut/coul/long 10 # 10 Å for both electrostatic and non-covalent interactions
+kspace_style pppm 1e-5 # long-range solver for the Coulomb interactions: particle-particle-particle mesh
+
+special_bonds   dreiding
+pair_modify     tail yes mix arithmetic
+dielectric      1.0 
+#pair_coeff dreiding   F C O S H
+
+read_data ../ionomer_structure_dreiding_.lammps
+# simualtion box, atoms, masses, bonds, angles, dihedrals, pair coeffs, bond coeffs, angle coeffs, dihedral coeffs
+
+variable        Tdamp       equal     v_dt*100     # Recommended value in official site
+variable        dt          equal     0.05        # Timestep default 0.5
+variable        tempStart   index     300
+
+# --------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
+# ----------------------- Relaxation | FIRE
+
+
+neighbor        2.0 bin
+neigh_modify    every 1  delay 0 check yes
+
+# Initial temperature setting
+velocity all create 50.0 12345 mom yes rot yes dist gaussian
+
+# Equilibration run at low temperature
+fix 1 all nvt temp 50.0 50.0 0.1
+timestep  ${dt}
+run 1000
+unfix 1
+
+# Set up dump file to observe minimization
+#dump            dmp_nvt all custom 10 minimization_dump.lammpstrj id element xs ys zs
+#dump_modify     dmp_nvt element F C C C O O S S H
+
+# Define the minimization parameters
+min_style fire
+min_modify dmax 0.1
+timestep 1.0
+
+# Perform the energy minimization
+minimize 1.0e-6 1.0e-8 10000 100000
+
+# End the dump after minimization
+#undump 1
+
+#write_data EnergyMINsystem.data
+# ----------------------- Initiation (NVT)
+# Considering a Nosé-Hoover thermostat
+
+timestep        ${dt}
+thermo          1000
+
+
+thermo_style    custom step temp etotal evdwl ecoul epair ebond eangle edihed elong etail  press vol lx ly lz density
+dump            dmp_nvt all custom 5000 thermal_nvt.traj id element xs ys zs # file: thermal trajectory
+dump_modify     dmp_nvt element F C O O S H
+
+
+velocity        all create 50 137534 dist gaussian # 50 K  for temperature initialization
+fix             nvt all nvt temp 50 ${tempStart} ${Tdamp} 
+run             100000 #${run_nvt}
+unfix           nvt
+fix             nvt all nvt temp ${tempStart} ${tempStart} ${Tdamp}
+run             150000
+unfix           nvt
+undump          dmp_nvt
+reset_timestep  0
+write_restart   restart.init_nvt
+
+write_data equilibrated_ionomer_.data

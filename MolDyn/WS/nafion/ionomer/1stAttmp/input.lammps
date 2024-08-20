@@ -1,0 +1,32 @@
+units           real
+atom_style      full
+boundary        p p p
+
+bond_style 		harmonic
+angle_style 	cosine/squared # more complex than harmonic
+dihedral_style 	harmonic
+
+pair_style lj/cut/coul/long 10 # 10 Å for both electrostatic and non-covalent interactions
+kspace_style pppm 1e-5 # long-range solver for the Coulomb interactions: particle-particle-particle mesh
+
+special_bonds   dreiding
+pair_modify     tail yes mix arithmetic
+dielectric      1.0
+
+read_data ../equilibration_polymer_ij.data
+
+group hydrogen type 6
+#group nafion type 1 2 3 4 5 6
+
+delete_atoms group hydrogen
+
+
+# Set up dump file to observe minimization
+dump            dmp_nvt all custom 1 dump.lammpstrj id element xs ys zs
+dump_modify     dmp_nvt element F C O O S H
+
+run 0
+
+
+write_restart restart.relaxed_ionomer_
+write_data relaxed_ionomer_.data pair ij
