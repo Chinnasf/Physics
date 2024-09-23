@@ -1,0 +1,50 @@
+mass 1 12.011000 # CB nonpolar –CF2 –CF2 – monomers that form a hydrophobic backbone
+mass 2 12.011000 # C  carbon in the polar monomers that form a hydrophilic side chain
+mass 3 18.998400 # F
+mass 4 15.999400 # O
+mass 5 32.060000 # S
+
+# WARNING, LAMMPS LJ(12/6) is different from the model's.
+# ε_L = ε_Μ, when σ_L = (0.5^1/6)*σ_M
+pair_coeff 1 1 0.0844 3.45998 # 0.0844 3.8837 | C(B)
+pair_coeff 2 2 0.0951 3.47299 # 0.0951 3.8983 | C
+pair_coeff 3 3 0.0496 3.02487 # 0.0496 3.3953 | F
+pair_coeff 4 4 0.0957 3.03315 # 0.0957 3.4046 | O
+pair_coeff 5 5 0.3440 3.59032 # 0.3440 4.0300 | S
+
+# LAMMPS harmonic bond style: K(r - r_0)^2
+# MODEL's harmonic bond style: 0.5*K(r - r_0)^2
+# Thus, K_lammps = 0.5*K_model.
+# bond_coeff bond-id K (kcal/mol/Å2 ) r (Å2)
+# All other parameters were kept fixed at the original value. 
+bond_coeff 1 214.6602   1.4982          # 429.3204  1.4982 | C(B)–C(B)
+bond_coeff 2 350.0000   1.5300          # 700       1.5300 | C(B)–C
+bond_coeff 3 302.62975  1.3360          # 605.2595  1.3360 | C–F
+bond_coeff 4 350.0000   1.4200          # 700       1.4200 | C–O
+bond_coeff 5 350.0000   1.8000          # 700       1.8000 | C–S
+bond_coeff 6 350.0000   1.4800          # 700       1.4800 | S–O
+
+# LAMMPS harmonic angle style: K(θ - θ_0)^2
+# MODEL's harmonic angle style: 0.5*K(θ - θ_0)^2
+# Thus, K_lammps = 0.5*K_model.
+# angle_coeff angle-id K (kcal/mol/rad^2 ) θ (deg) WARNING LAMMPS receives in deg, then converts into rad
+# All other parameters were kept fixed at the original value. 
+angle_coeff 1  53.13695    122.5536     # 106.2739  122.5536 | C(B)–C(B)–C(B)
+angle_coeff 2  50.16830    118.3191     # 100.3366  118.3191 | C(B)–C(B)–F
+angle_coeff 3  54.11980    121.5020     # 108.2396  121.5020 | F–C(B)–F
+angle_coeff 4  50.00000    109.4710     # 100.0000  109.4710 | C–C–O
+angle_coeff 5  50.00000    125.2300     # 100.0000  125.2300 | C–O–C
+angle_coeff 6  50.00000    109.5700     # 100.0000  109.5700 | O–C–F
+angle_coeff 7  50.00000    110.3000     # 100.0000  110.3000 | F–C–S
+angle_coeff 8  50.00000    116.8100     # 100.0000  116.8100 | C–C–S
+angle_coeff 9  175.00000   102.6500     # 350.0000  102.6500 | C–S–O
+angle_coeff 10 175.00000   115.5000     # 350.0000  115.5000 | O–S–O
+
+# LAMMPS harmonic torsion style: K[1 + d*cos(nφ)]
+# MODEL's harmonic torsion style: 0.5*K[1 - d*cos(nφ)]
+dihedral_coeff 1  0.5000    1   3 # 1.0000 -1 3 | X–C(B)–C(B)–X
+dihedral_coeff 2  1.6085   -1   3 # 3.2171  1 3 | CB–CB–CB–CB
+dihedral_coeff 3  2.0611   -1   3 # 4.1222  1 3 | F–CB–CB–CB
+dihedral_coeff 4  2.0212    1   3 # 4.0424 -1 3 | F–CB–CB–F
+dihedral_coeff 5  0.5000    1   3 # 1.0000 -1 3 | X–C(B)–O–X
+dihedral_coeff 6  0.5000    1   3 # 1.0000 -1 3 | X–C(B)–S–X
