@@ -4,22 +4,29 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set(style='ticks')
 
+from IPython.core.debugger import Pdb #Pdb().set_trace()
+
+
 import re
 import os
 
-filename_ = "relaxing_ionomer_chain_12reps_continuation.data"
-output_filename_ = "Expanded_Ionomer_MOL.mol"
+filename_ = "__.data"
+output_filename_ = "__.mol"
 
-slices_structure = [90,913]
-slices_bonds = [1744,2566]
-slices_angles = [2570,4189]
-slices_dihedral = [4193,6504]
+slices_structure = [ , ]
+slices_bonds = [ , ]
+slices_angles = [ , ]
+slices_dihedral = [ , ]
 
 def get_data(filename_):
 	with open(filename_, "r") as file:
 		file_content = file.readlines()
 	data = pd.DataFrame(file_content, columns=['data'])    
 	return data
+
+
+#df = get_data(filename_)
+#Pdb().set_trace()
 
 def get_structure(slices):
 	data  = get_data(filename_)
@@ -72,6 +79,8 @@ structure = get_structure(slices_structure)
 bonds = get_bonds(slices_bonds)
 angles = get_angles(slices_angles)
 dihedrals = get_dihedrals(slices_dihedral)
+
+#Pdb().set_trace()
 
 
 def write_mol_file():
