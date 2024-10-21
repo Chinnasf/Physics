@@ -19,6 +19,13 @@ You can also find the code to simulate the damped harmonic/anharmonic oscillator
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Gifs/AHO_zeta0_005.gif" width="400" align="center">
 </div>
+
+### LAMMPS SIMULATION
+
+
+<div align="center">
+  <img src="https://github.com/Chinnasf/Physics/blob/master/MolDyn/Simulations/CL_4IL13p5_1p2ns_zoom_in.gif" width="400" align="center">
+</div>
 ---
 
 ### Content: OLD Description
