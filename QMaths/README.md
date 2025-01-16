@@ -1,0 +1,1 @@
+Quick mathematic codes to satisfy my curioisty. (:
