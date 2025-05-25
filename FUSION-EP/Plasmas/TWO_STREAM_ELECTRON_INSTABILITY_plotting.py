@@ -1,5 +1,4 @@
 ## REMEMBER TO ACTIVATE `GPU_optimization (aGPUo)`
-
 #import tensorflow
 import torch
 import os
@@ -8,7 +7,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import scienceplots
-
 import imageio.v2 as imageio
 import glob
 
@@ -109,16 +107,11 @@ def poisson_solver(ne_):
     return phi
 
 
-
-
-
 def electric_field(phi_):
     E = np.zeros(J)
     for j in range(J):
         E[j] = ( phi_[(j-1)%J] - phi_[(j+1)%J])/(2*dx)
     return E
-
-
 
 
 def particle_electric_field(r_, E_):
@@ -130,8 +123,6 @@ def particle_electric_field(r_, E_):
         left,right = j_[i]%J, (j_[i]+1)%J   # particle's indexes w.r.t. j
         E_particles[i] = (1-y_[i])*E_[left] + y_[i]*E_[right]  # Linear interpolation 
     return E_particles
-
-
 
 
 def derivative_r_v(y_):
