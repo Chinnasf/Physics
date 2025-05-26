@@ -2,7 +2,7 @@
 
 <code style="color : red"> Warning: it may take long before all images display.</code>
 
-This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies. I will focus on this repository, mainly applying GPU processing to Physics-related insights. For instance, here is an example of a simulation of gas inside a box. The following image shows the code for 500 particles processed with CPU.  
+This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. For instance, here is an example of a simulation of gas inside a box. The following image shows the code for 500 particles processed with CPU.  
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withoutGPU_500_smaller__particles.mp4.gif" width="600">
