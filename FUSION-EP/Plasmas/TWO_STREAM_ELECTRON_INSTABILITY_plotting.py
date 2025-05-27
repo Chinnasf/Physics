@@ -63,17 +63,19 @@ v0 = sample_velocity(vb, 4)
 velocity_tags = abs(v0 - vb) < abs(v0 + vb) # False = left going
 
 
-# To be optimized!
 def compute_density(r_):
     ne_ = np.zeros(J)
     j_ = (r_/dx).astype(int)         # size N
     fractional_offset = (r_/dx) - j_ # distance from left grid point (normalized)
     
-    for i in range(N):
-        left,right = j_[i]%J, (j_[i]+1)%J               # particle's indexes w.r.t. j
-        ne_[right] += fractional_offset[i] / dx          # weight to left
-        ne_[left ] += (1 - fractional_offset[i]) / dx    # weight to right
-    return ne_
+    #for i in range(N):
+    #    left,right = j_[i]%J, (j_[i]+1)%J               # particle's indexes w.r.t. j
+    #    ne_[right] += fractional_offset[i] / dx          # weight to left
+    #    ne_[left ] += (1 - fractional_offset[i]) / dx    # weight to right
+    
+    # REMOVING LOOP TO IMPLEMENT
+    np.add.at(ne_, j_%J, (1 - fractional_offset) / dx)
+    np.add.at(ne_, (j_+1)%J, fractional_offset / dx)
 
     
 def poisson_solver(ne_):
