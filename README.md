@@ -1,4 +1,4 @@
-# 🔬 DIVERSE Physics Simulations in Python3+ | CPU & GPU Implementations
+# ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
 
 <code style="color : red"> Warning: it may take long before all images display.</code>
 
