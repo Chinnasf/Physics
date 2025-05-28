@@ -7,6 +7,7 @@ import numpy as np
 import scienceplots
 import imageio.v2 as imageio
 import glob
+import time
 
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
@@ -14,6 +15,9 @@ from matplotlib.animation import PillowWriter
 plt.style.use(['science', 'notebook'])
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+
+torch.cuda.synchronize()
+start_time = time.time()
 
 L  = 100     # Domain of the solution 0 <= x <= L  (in Debye lengths)
 N  = 250000  # Number of electrons
@@ -23,9 +27,12 @@ n0 = N/L     # ion number density
 dx = L/J
 
 dt = 0.1     # time step  (in inverse plasma frequencies)
-t_max = 100  # such that 0 <= t <= t_max
+t_max = 60  # such that 0 <= t <= t_max
 timesteps = int(t_max / dt)
 
+# FOR THIS SETTING:
+# Elapsed: 404.86 s (t_max = 100)
+# Elapsed: 252.56 s (t_max = 60)
 
 # Check input parameters make sence:
 if (N < 1) | (J < 2) | (L <= 0.) | (vb <= 0.) | (dt <= 0.) | (t_max <= 0.) | ((int (t_max / dt) / 10) < 1):
@@ -195,5 +202,9 @@ for step in range(timesteps):
     save_phase_space_plot(y[:N], y[N:], step)
 
 
-
 create_gif()
+
+
+torch.cuda.synchronize()
+end_time = time.time()
+print(f"Elapsed: {end_time - start_time:.2f} s")
