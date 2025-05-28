@@ -10,7 +10,7 @@ This repository contains various codes and documents about pure and applied phys
 The following image shows the code for 500 particles processed with CPU.  
 
 <div align="center">
-  <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withoutGPU_500_smaller__particles.mp4.gif" width="600">
+  <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/collisions_and_dist_500_particles.gif" width="600">
 </div>
 
 The following image was created using the same code, but instead of processing with `numpy`, I used `PyTorch` to use the GPU; now, for 5000 particles.
