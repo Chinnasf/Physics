@@ -1,4 +1,4 @@
-# Physics
+# 🔬 DIVERSE Physics Simulations in Python3+ | CPU & GPU Implementations
 
 <code style="color : red"> Warning: it may take long before all images display.</code>
 
@@ -20,7 +20,7 @@ You can also find the code to simulate the damped harmonic/anharmonic oscillator
   <img src="https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Gifs/AHO_zeta0_005.gif" width="400" align="center">
 </div>
 
-### MY WORK AS A MSCA PhD RESEARCHER (DC15) | PROTON EXCHANGE MEMBRANE FUEL CELLS.
+### MY WORK AS A [MSCA PhD](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks) RESEARCHER (DC15) | PROTON EXCHANGE MEMBRANE FUEL CELLS.
 
 The DC15 position is responsible for optimizing the catalyst layer (CL) of a Proton Exchange Membrane Fuel
 Cell (PEMFC). There are various types of CLs, with the most common ones relying on platinum as a primary
