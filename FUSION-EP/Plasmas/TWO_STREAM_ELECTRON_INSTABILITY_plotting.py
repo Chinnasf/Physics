@@ -121,6 +121,7 @@ def particle_electric_field(r_, E_):
     j_ = (r_/dx).astype(int)  # size N
     y_ = (r_/dx) - j_         # fractional offset
     
+    # ACTUALLY, A LOOP IS NOT NEEDED HERE, IT CAN BE IMPROVED WITH NUMPY'S VECTORIZATION
     for i in range(N):
         left,right = j_[i]%J, (j_[i]+1)%J   # particle's indexes w.r.t. j
         E_particles[i] = (1-y_[i])*E_[left] + y_[i]*E_[right]  # Linear interpolation 
