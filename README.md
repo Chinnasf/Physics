@@ -27,7 +27,7 @@ This is the result of the GPU analysis.
 </div>
 
 <div align="center">
-  <img src="https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/Images/two_stream_instability.png" width="800">
+  <img src="https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/Images/two_stream_instability.png" width="1000">
 </div>
 
 
