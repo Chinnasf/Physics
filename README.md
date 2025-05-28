@@ -20,8 +20,29 @@ You can also find the code to simulate the damped harmonic/anharmonic oscillator
   <img src="https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Gifs/AHO_zeta0_005.gif" width="400" align="center">
 </div>
 
-### LAMMPS SIMULATION
+### MY WORK AS A MSCA PhD RESEARCHER (DC15) | PROTON EXCHANGE MEMBRANE FUEL CELLS.
 
+The DC15 position is responsible for optimizing the catalyst layer (CL) of a Proton Exchange Membrane Fuel
+Cell (PEMFC). There are various types of CLs, with the most common ones relying on platinum as a primary
+catalytic component. This type of CL can account for up to 40% of the total cost of a PEMFC [[5]](https://www.sciencedirect.com/science/article/pii/S2451910321001617).
+CLs also depend on a polymer to optimize proton transport; hence, the polymer directly impacts both the
+performance and longevity of the fuel cell. The most commonly chosen polymers are PFSA-based ionomers,
+as they offer commercial advantages due to their lower cost—compared to alternative materials—and their
+large-scale production availability [[6]](https://www.sciencedirect.com/science/article/pii/S2214993723001628).
+
+However, increasing research efforts are focused on investigating alternative materials for both the catalyst and
+ionomers, aiming to reduce costs and minimize the environmental impact of these devices [[5]](https://www.sciencedirect.com/science/article/pii/S2451910321001617),[[7]](https://www.sciencedirect.com/science/article/pii/S2041652024008435). Although
+PFSA-based ionomers, such as Nafion [[8]](https://www.sciencedirect.com/science/article/pii/
+S0360128510000511), demonstrate excellent engineering performance, they pose significant
+risks to both human health and the environment. Due to these concerns, the European Commission has
+implemented restrictions on the use of a specific subgroup of PFAS chemicals [[9]](https://ec.europa.eu/commission/presscorner/detail/en/ip_24_4763), [[10]](https://echa.europa.eu/hot-topics/perfluoroalkyl-chemicals-pfas).
+
+Therefore, my position focuses on investigating and optimizing various CL-related materials under different
+operating conditions while considering their performance, cost, and environmental impact. To achieve this, the
+DC15 is expected to generate its own dataset from molecular dynamics simulations—designed to be as realistic
+as possible—which will then be used to train a Physics-Informed Machine Learning algorithm [[3]](https://euraxess.ec.europa.eu/jobs/111519).
+
+The following .gif file results from a simulation I created using LAMMPS. The parametrization of the components were done through a modified version of the  [DREDIGING Force Field](https://pubs.acs.org/doi/10.1021/j100389a010). 
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/MolDyn/Simulations/CL_4IL13p5_1p2ns_zoom_in.gif" width="400" align="center">
