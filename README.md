@@ -1,9 +1,30 @@
 # ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
 
-<code style="color : red"> Warning: it may take long before all images display.</code>
+<code style="color : red"> Warning: it may take some time before all images display.</code>
 
 This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. 
 
+
+### Two-Stream Instability: NumPy vs. PyTorch | Electron Beams with Fixed Ion Background | Unmagnetized Plasma
+
+This simulation models two counter-propagating electron beams interacting under a fixed ion background — a classic setup to study two-stream instability. The codes are inspired by Chapter 8 of the [Computational Physics book](https://farside.ph.utexas.edu/teaching/329/329.pdf) by Richard Fitzpatrick, Professor of Physics at The University of Texas at Austin.
+
+I developed two separate implementations of the same physical system:
+
+- [**CPU** version](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb) (NumPy): Ideal for rapid prototyping and educational clarity.
+- [**GPU** version](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability_plotting_TORCH.py) (PyTorch): Designed to harness parallel processing and scale efficiently.
+
+Both versions use identical physical parameters for fair comparison.
+
+⏱️ Execution time:
+* **NumPy (CPU)**: 811.13 seconds
+* **PyTorch (GPU)**: 252.56 seconds
+
+This is the result of the GPU analysis. 
+
+<div align="center">
+  <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Images/frames/L100N250000J1000vb5dt0.1tmax60simulation_.gif" width="600">
+</div>
 
 ### Simulation of gas inside a box
 
@@ -19,7 +40,9 @@ The following image was created using the same logic, but instead of processing 
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles______.gif" width="600">
 </div>
 
-You can also find the code to simulate the damped harmonic/anharmonic oscillator. The code is based on the [Stochastic Processes: Data Analysis and Computer Simulation](https://learning.edx.org/course/course-v1:KyotoUx+009x+1T2017/home) course. 
+### Damped Harmonic/Anharmonic Oscillator
+
+You can also find the code [to simulate](https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Damped%20Harmonic%20Oscillator.ipynb) the damped harmonic/anharmonic oscillator. The code is based on the [Stochastic Processes: Data Analysis and Computer Simulation](https://learning.edx.org/course/course-v1:KyotoUx+009x+1T2017/home) course. 
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/General%20Physics/Gifs/AHO_zeta0_005.gif" width="400" align="center">
