@@ -15,14 +15,14 @@ plt.style.use(['science', 'notebook'])
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-L  = 100    # Domain of the solution 0 <= x <= L  (in Debye lengths)
+L  = 100     # Domain of the solution 0 <= x <= L  (in Debye lengths)
 N  = 250000  # Number of electrons
-J  = 1000   # Number of grid-points
-vb = 5      # Beam velocity
-n0 = N/L    # ion number density
+J  = 1000    # Number of grid-points
+vb = 5       # Beam velocity
+n0 = N/L     # ion number density
 dx = L/J
 
-dt = 0.1    # time step  (in inverse plasma frequencies)
+dt = 0.1     # time step  (in inverse plasma frequencies)
 t_max = 100  # such that 0 <= t <= t_max
 timesteps = int(t_max / dt)
 
