@@ -7,13 +7,13 @@ This repository contains various codes and documents about pure and applied phys
 
 ### Simulation of gas inside a box
 
-The following image shows the code for 500 particles processed with CPU.  
+The following image shows the code for 500 particles processed with CPU, using [this code](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Boltzmann%20Distribution%20%7C%20Non-GPU.ipynb).  
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/collisions_and_dist_500_particles.gif" width="600">
 </div>
 
-The following image was created using the same code, but instead of processing with `numpy`, I used `PyTorch` to use the GPU; now, for 5000 particles.
+The following image was created using the same logic, but instead of processing data with `numpy`, [I used `PyTorch`](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Boltzmann%20Distribution%20%7C%20Optimized%20with-GPU%20%7C%20Pytorch.ipynb) to use the GPU; now, for 5000 particles.
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/GIFs/withGPU_5000_smaller__particles______.gif" width="600">
