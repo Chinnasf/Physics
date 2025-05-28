@@ -78,6 +78,7 @@ def compute_density(r_):
     # REMOVING LOOP TO IMPLEMENT
     np.add.at(ne_, j_%J, (1 - fractional_offset) / dx)
     np.add.at(ne_, (j_+1)%J, fractional_offset / dx)
+    return ne_
 
     
 def poisson_solver(ne_):
