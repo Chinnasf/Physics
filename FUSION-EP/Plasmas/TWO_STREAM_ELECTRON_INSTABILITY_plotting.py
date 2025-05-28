@@ -9,6 +9,7 @@ import numpy as np
 import scienceplots
 import imageio.v2 as imageio
 import glob
+import time
 
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
@@ -19,18 +20,19 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # from tensorflow.python.client import device_lib
 # print(device_lib.list_local_devices())
 
+start_time = time.time()
 
 # Parameters | Remember it is the normalized analysis
 
-L  = 100    # Domain of the solution 0 <= x <= L  (in Debye lengths)
-N  = 25000  # Number of electrons
-J  = 1000   # Number of grid-points
-vb = 5      # Beam velocity
-n0 = N/L    # ion number density
+L  = 100     # Domain of the solution 0 <= x <= L  (in Debye lengths)
+N  = 250000  # Number of electrons
+J  = 1000    # Number of grid-points
+vb = 5       # Beam velocity
+n0 = N/L     # ion number density
 dx = L/J
 
 dt = 0.1    # time step  (in inverse plasma frequencies)
-t_max = 150  # such that 0 <= t <= t_max
+t_max = 60  # such that 0 <= t <= t_max
 timesteps = int(t_max / dt)
 
 
@@ -200,4 +202,6 @@ for step in range(timesteps):
     save_phase_space_plot(y[:N], y[N:], step)
     
 create_gif()
-    
+
+end_time = time.time()
+print(f"Simulation completed in {end_time - start_time:.2f} seconds.")
