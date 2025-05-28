@@ -14,7 +14,7 @@ I developed two separate implementations of the same physical system:
 - [**CPU** version](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb) (NumPy): Ideal for rapid prototyping and educational clarity.
 - [**GPU** version](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability_plotting_TORCH.py) (PyTorch): Designed to harness parallel processing and scale efficiently.
 
-Both versions use identical physical parameters for fair comparison.
+Both versions use identical physical parameters, with 250,000 particles, for fair comparison.
 
 ⏱️ Execution time:
 * **NumPy (CPU)**: 811.13 seconds
@@ -25,6 +25,11 @@ This is the result of the GPU analysis.
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Images/frames/L100N250000J1000vb5dt0.1tmax60simulation_.gif" width="600">
 </div>
+
+<div align="center">
+  <img src="https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/Images/two_stream_instability.png" width="600">
+</div>
+
 
 ### Simulation of gas inside a box
 
