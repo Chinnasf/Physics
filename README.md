@@ -1,6 +1,6 @@
 # ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
 
-<code style="color : red"> Warning: it may take some time before all images display.</code>
+## <code style="color : red"> Warning: it may take some time before all images display.</code>
 
 This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. 
 
