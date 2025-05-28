@@ -35,6 +35,10 @@ dt = 0.1    # time step  (in inverse plasma frequencies)
 t_max = 60  # such that 0 <= t <= t_max
 timesteps = int(t_max / dt)
 
+# WITH THESE SETTINGS:
+## Simulation completed in 811.13 seconds.
+
+
 
 # Check input parameters make sence:
 if (N < 1) | (J < 2) | (L <= 0.) | (vb <= 0.) | (dt <= 0.) | (t_max <= 0.) | ((int (t_max / dt) / 10) < 1):
