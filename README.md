@@ -32,8 +32,7 @@ large-scale production availability [[6]](https://www.sciencedirect.com/science/
 
 However, increasing research efforts are focused on investigating alternative materials for both the catalyst and
 ionomers, aiming to reduce costs and minimize the environmental impact of these devices [[5]](https://www.sciencedirect.com/science/article/pii/S2451910321001617),[[7]](https://www.sciencedirect.com/science/article/pii/S2041652024008435). Although
-PFSA-based ionomers, such as Nafion [[8]](https://www.sciencedirect.com/science/article/pii/
-S0360128510000511), demonstrate excellent engineering performance, they pose significant
+PFSA-based ionomers, such as Nafion [[8]](https://www.sciencedirect.com/science/article/pii/S0360128510000511), demonstrate excellent engineering performance, they pose significant
 risks to both human health and the environment. Due to these concerns, the European Commission has
 implemented restrictions on the use of a specific subgroup of PFAS chemicals [[9]](https://ec.europa.eu/commission/presscorner/detail/en/ip_24_4763), [[10]](https://echa.europa.eu/hot-topics/perfluoroalkyl-chemicals-pfas).
 
