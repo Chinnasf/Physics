@@ -41,7 +41,7 @@ operating conditions while considering their performance, cost, and environmenta
 DC15 is expected to generate its own dataset from molecular dynamics simulations—designed to be as realistic
 as possible—which will then be used to train a Physics-Informed Machine Learning algorithm [[3]](https://euraxess.ec.europa.eu/jobs/111519).
 
-The following .gif file results from a simulation I created using LAMMPS. The parametrization of the components were done through a modified version of the  [DREDIGING Force Field](https://pubs.acs.org/doi/10.1021/j100389a010). 
+The following .gif file results from [a simulation](https://github.com/Chinnasf/Physics/blob/master/MolDyn/LAMMPS/CL_PEMFC_Model/input.lammps) I created using [LAMMPS](https://www.lammps.org/). The parametrization of the components were done through a modified version of the  [DREDIGING Force Field](https://pubs.acs.org/doi/10.1021/j100389a010). 
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/MolDyn/Simulations/CL_4IL13p5_1p2ns_zoom_in.gif" width="400" align="center">
