@@ -30,6 +30,7 @@ dt = 0.1     # time step  (in inverse plasma frequencies)
 t_max = 60  # such that 0 <= t <= t_max
 timesteps = int(t_max / dt)
 
+
 # FOR THIS SETTING:
 # Elapsed: 404.86 s (t_max = 100)
 # Elapsed: 252.56 s (t_max = 60)
@@ -37,6 +38,7 @@ timesteps = int(t_max / dt)
 # Check input parameters make sence:
 if (N < 1) | (J < 2) | (L <= 0.) | (vb <= 0.) | (dt <= 0.) | (t_max <= 0.) | ((int (t_max / dt) / 10) < 1):
     print("Error - invalid input parameters")
+
 
 
 def sample_velocity(v_b, tails_factor, batch_size=100000):
