@@ -1,8 +1,8 @@
 # ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
 
-## <code style="color : red"> Warning: it may take some time before all images display.</code>
+## IMPORTANT: It may take some time before all images display. Please, have some patience. (:
 
-This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. 
+This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master's studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. 
 
 
 ### Two-Stream Instability: NumPy vs. PyTorch | Electron Beams with Fixed Ion Background | Unmagnetized Plasma
