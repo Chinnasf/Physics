@@ -1,5 +1,8 @@
 # ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
 
+**Remark on GPU optimisation**: GPU performance is often limited not by math but by how often you switch kernels.
+
+
 ## IMPORTANT: It may take some time before all images display. Please, have some patience. (:
 
 This repository contains various codes and documents about pure and applied physics developed during my undergraduate and master's studies, as well as my PhD research on PEMFC. I will focus on this repository, mainly applying GPU processing to Physics-related insights. 
