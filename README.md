@@ -2,6 +2,7 @@
 
 **Remark on GPU optimisation**: GPU performance is often limited not by math but by how often you switch kernels.
 
+Use `torch.profiler` to assess wich functions requires the most of optimization
 
 ## IMPORTANT: It may take some time before all images display. Please, have some patience. (:
 
