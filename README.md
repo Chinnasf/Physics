@@ -16,7 +16,7 @@ This simulation models two counter-propagating electron beams interacting under 
 I developed two separate implementations of the same physical system:
 
 - [**CPU** version](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb) (NumPy): Ideal for rapid prototyping and educational clarity.
-- [**GPU** version](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability_plotting_TORCH.py) (PyTorch): Designed to harness parallel processing and scale efficiently.
+- [**GPU** version](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_plotting_TORCH.py) (PyTorch): Designed to harness parallel processing and scale efficiently.
 
 Both versions use identical physical parameters, with 250,000 particles, for fair comparison.
 
