@@ -1,0 +1,45 @@
+Elapsed: 0.97 s
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                            RungeKutta4         0.00%       0.000us         0.00%       0.000us       0.000us      22.758ms       323.41%      22.758ms       4.552ms           0 b           0 b           0 b           0 b             5  
+                                          ProfilerStep*         1.19%     291.577us        99.97%      24.394ms       4.879ms       0.000us         0.00%       7.037ms       1.407ms           0 b           0 b           0 b           0 b             5  
+                                   main_simulation_step         2.07%     505.559us        98.77%      24.103ms       4.821ms       0.000us         0.00%       7.037ms       1.407ms           0 b           0 b           0 b     -54.31 Mb             5  
+                                            RungeKutta4         5.80%       1.414ms        95.42%      23.285ms       4.657ms       0.000us         0.00%       6.953ms       1.391ms           0 b           0 b      49.54 Mb    -118.15 Mb             5  
+                                 compute_derivative_jit        13.62%       3.325ms        84.75%      20.681ms       1.034ms       0.000us         0.00%       5.653ms     282.654us           0 b           0 b      40.00 Mb     -85.07 Mb            20  
+                                     aten::scatter_add_         3.06%     746.135us         4.43%       1.080ms      26.998us       1.559ms        22.15%       1.559ms      38.972us           0 b           0 b    -115.36 Mb    -115.36 Mb            40  
+void at::native::_scatter_gather_elementwise_kernel<...         0.00%       0.000us         0.00%       0.000us       0.000us       1.559ms        22.15%       1.559ms      38.972us           0 b           0 b           0 b           0 b            40  
+                                        aten::remainder         6.29%       1.536ms         8.85%       2.159ms      25.398us       1.294ms        18.38%       1.294ms      15.220us           0 b           0 b      88.71 Mb      88.71 Mb            85  
+void at::native::vectorized_elementwise_kernel<2, at...         0.00%       0.000us         0.00%       0.000us       0.000us       1.251ms        17.77%       1.251ms      15.632us           0 b           0 b           0 b           0 b            80  
+                                              aten::add         1.47%     358.277us         2.41%     588.896us      16.826us     846.163us        12.02%     846.163us      24.176us           0 b           0 b      68.62 Mb      68.62 Mb            35  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     846.163us        12.02%     846.163us      24.176us           0 b           0 b           0 b           0 b            35  
+               fused_div_floor_to__14315293327304132441         2.44%     596.511us         2.92%     713.121us      35.656us     739.920us        10.51%     739.920us      36.996us           0 b           0 b     156.33 Mb     156.33 Mb            20  
+               fused_div_floor_to__14315293327304132441         0.00%       0.000us         0.00%       0.000us       0.000us     739.920us        10.51%     739.920us      36.996us           0 b           0 b           0 b           0 b            20  
+                                            aten::index         3.72%     907.384us         5.72%       1.395ms      34.875us     677.327us         9.63%     677.327us      16.933us           0 b           0 b     -39.99 Mb     -39.99 Mb            40  
+void at::native::index_elementwise_kernel<128, 4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     677.327us         9.63%     677.327us      16.933us           0 b           0 b           0 b           0 b            40  
+                              fused_mul_mul_add_neg_cat         0.88%     213.789us         1.34%     327.001us      16.350us     611.854us         8.69%     611.854us      30.593us           0 b           0 b      40.00 Mb      40.00 Mb            20  
+                              fused_mul_mul_add_neg_cat         0.00%       0.000us         0.00%       0.000us       0.000us     611.854us         8.69%     611.854us      30.593us           0 b           0 b           0 b           0 b            20  
+                                              aten::mul         2.55%     621.193us         4.01%     978.846us      19.577us     484.043us         6.88%     484.043us       9.681us           0 b           0 b      59.08 Mb      59.08 Mb            50  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     453.963us         6.45%     453.963us      15.132us           0 b           0 b           0 b           0 b            30  
+                                   main_simulation_step         0.00%       0.000us         0.00%       0.000us       0.000us     221.796us         3.15%     221.796us      44.359us           0 b           0 b           0 b           0 b             5  
+                                            aten::copy_         5.09%       1.243ms        11.17%       2.725ms      18.794us     211.877us         3.01%     211.877us       1.461us           0 b           0 b    -650.00 Kb    -650.00 Kb           145  
+                         Memcpy DtoD (Device -> Device)         0.00%       0.000us         0.00%       0.000us       0.000us     167.077us         2.37%     167.077us       1.591us           0 b           0 b           0 b           0 b           105  
+                                              aten::div         1.15%     280.717us         1.71%     416.385us      20.819us     164.033us         2.33%     164.033us       8.202us           0 b           0 b     -80.00 Kb     -80.00 Kb            20  
+void at::native::unrolled_elementwise_kernel<at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us     164.033us         2.33%     164.033us       8.202us           0 b           0 b           0 b           0 b            20  
+                                          aten::fft_fft         0.45%     108.802us         7.46%       1.820ms      91.023us       0.000us         0.00%     137.858us       6.893us           0 b           0 b     160.00 Kb           0 b            20  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 24.402ms
+Self CUDA time total: 7.037ms
+
+
+
+######### Parameters
+L = 100
+N = 250000
+J = 2**10
+vb = 6
+n0 = N / L
+dx = L / J
+dt = 0.5
+t_max = 60
+timesteps = int(t_max / dt)
