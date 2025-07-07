@@ -13,18 +13,14 @@ This repository contains various codes and documents about pure and applied phys
 
 This simulation models two counter-propagating electron beams interacting under a fixed ion background — a classic setup to study two-stream instability. The codes are inspired by Chapter 8 of the [Computational Physics book](https://farside.ph.utexas.edu/teaching/329/329.pdf) by Richard Fitzpatrick, Professor of Physics at The University of Texas at Austin.
 
-I developed two separate implementations of the same physical system:
 
-- [**CPU** version](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb) (NumPy): Ideal for rapid prototyping and educational clarity.
-- [**GPU** version](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_plotting_TORCH.py) (PyTorch): Designed to harness parallel processing and scale efficiently.
-
-Both versions use identical physical parameters, with 250,000 particles, for fair comparison.
+All versions use identical physical parameters, with 250,000 particles, for fair comparison.
 
 
 
 |                        | **Pedagogical Code  Struc-** | **ture (R. Fitzpatrick Book)** |         **Vectorized**        |
 |-----------------------:|----------------------------------:|-----------------|:-------------------------:|
-|                        |          **Numpy (CPU)**            |    **PyTorch (GPU)**  | **PyTorch + JIT compilation** |
+|                        |          **[Numpy (CPU)]((https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb))**            |    **[PyTorch (GPU)]((https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_plotting_TORCH.py))**  | **PyTorch + JIT compilation** |
 |                **⏱️ Time** |              811.13 s             |     252.56 s    |         0.007037 s        |
 | **Code Speed Improvement** |             Reference             |      68.87%     |         99.99913%         |
  
