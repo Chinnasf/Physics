@@ -26,7 +26,7 @@ All versions use identical physical parameters, with 250,000 particles, for fair
  
 
 
-**Two Stream Instability: two counter-propagating Maxwellian electron beams in an unmagnetized plasma.** 
+This is the result of the GPU analysis (you should see 1 GIF and 2 plots).
 
 <div align="center">
   <img src="https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/Images/two_stream_instability.png" width="1000">
