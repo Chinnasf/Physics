@@ -20,16 +20,14 @@ I developed two separate implementations of the same physical system:
 
 Both versions use identical physical parameters, with 250,000 particles, for fair comparison.
 
+
+
+|                        | Pedagogical Code  (R. Fitzpatrick | Structure Book) |         Vectorized        |
+|-----------------------:|----------------------------------:|-----------------|:-------------------------:|
+|                        |            Numpy (CPU)            |  PyTorch (GPU)  | PyTorch + JIT compilation |
+|                ⏱️ Time |              811.13 s             |     252.56 s    |         0.007037 s        |
+| Improvement code speed |             Reference             |      68.87%     |         99.99913%         |
  
-
-
-|                                | **Pedagogical Code Structure** *(R. Fitzpatrick Book)*   |                              | **Vectorized**                    |
-|--------------------------------|----------------------------------------------------------|--------------------------------|-----------------------------------|
-|                                | **Numpy (CPU)**                                          | **PyTorch (GPU)**              | **PyTorch + JIT compilation**     |
-| ⏱️ **Time**                    | 811.13 s                                                 | 252.56 s                       | 0.007037 s                        |
-| **Improvement code speed**     | Reference                                                | 68.87%                         | 99.99913%                         |
-
-
 
 
 This is the result of the GPU analysis (you should see 1 GIF and 2 plots). 
