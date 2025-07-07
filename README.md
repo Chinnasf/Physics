@@ -22,7 +22,7 @@ Both versions use identical physical parameters, with 250,000 particles, for fai
 
 
 
-|                        | **Pedagogical Code  Structure (R.** | **Fitzpatrick Book)** |         **Vectorized**        |
+|                        | **Pedagogical Code  Struc-** | **ture (R. Fitzpatrick Book)** |         **Vectorized**        |
 |-----------------------:|----------------------------------:|-----------------|:-------------------------:|
 |                        |          **Numpy (CPU)**            |    **PyTorch (GPU)**  | **PyTorch + JIT compilation** |
 |                **⏱️ Time** |              811.13 s             |     252.56 s    |         0.007037 s        |
