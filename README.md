@@ -20,7 +20,7 @@ All versions use identical physical parameters, with 250,000 particles, for fair
 
 |                        | **Pedagogical Code  Struc-** | **ture (R. Fitzpatrick Book)** |         **Vectorized**        |
 |-----------------------:|----------------------------------:|-----------------|:-------------------------:|
-|                        |          **[Numpy (CPU)](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb)**            |    **[PyTorch (GPU)](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_plotting_TORCH.py)**  | **PyTorch + JIT compilation** |
+|                        |          **[Numpy (CPU)](https://github.com/Chinnasf/Physics/blob/master/FUSION-EP/Plasmas/TWO_STREAM_ELECTRON_INSTABILITY.ipynb)**            |    **[PyTorch (GPU)](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_plotting_TORCH.py)**  | **[PyTorch + JIT compilation](https://github.com/Chinnasf/Physics/blob/master/GPU%20Code/Two_Stream_Instability/Two_Stream_Instability_JIT.py)** |
 |                **⏱️ Time** |              811.13 s             |     252.56 s    |         0.007037 s        |
 | **Code Speed Improvement** |             Reference             |      68.87%     |         99.99913%         |
  
