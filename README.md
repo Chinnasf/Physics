@@ -1,4 +1,4 @@
-# ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations
+# ⚛️ Physics Simulations and Data Analyses using Python3+ | CPU & GPU Implementations!
 
 **Remark on GPU optimisation**: GPU performance is often limited not by math but by how often you switch kernels.
 
