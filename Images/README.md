@@ -1,5 +1,13 @@
 # My typical settings
 
+```Python
+
+%load_ext autoreload
+%autoreload 2
+
+from IPython.core.debugger import Pdb #Pdb().set_trace()
+```
+
 ## SIMPLE
 
 ```Python
