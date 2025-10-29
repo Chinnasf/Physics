@@ -8,6 +8,13 @@
 from IPython.core.debugger import Pdb #Pdb().set_trace()
 ```
 
+### Convert from `.ipynb` to `.py`
+
+```Python
+jupyter nbconvert --to script your_notebook.ipynb
+```
+
+
 ## SIMPLE
 
 ```Python
