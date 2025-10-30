@@ -27,17 +27,14 @@ plt.style.use(['science', 'notebook'])
 ## MORE COMPLETE
 
 ```Python
-import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from pathlib import Path
+import scienceplots
+
 import sys
 root_path = Path.cwd().resolve().parent
 sys.path.append(str(root_path))
-
-import scienceplots
-from matplotlib import animation
-from matplotlib.animation import PillowWriter
 
 # Plot settings
 plt.style.use(['science', 'notebook'])
