@@ -101,3 +101,34 @@ fig.savefig("figure1.pdf", bbox_inches="tight", pad_inches=0.01, metadata={
 # If a raster is requested (e.g., Elsevier wants TIFF at 600 dpi):
 fig.savefig("figure1.tiff", dpi=600, bbox_inches="tight", pad_inches=0.01)
 ```
+
+## Cool Python stuff
+
+This may be needed for the future:
+
+```Python
+# check line intersections
+def cross2(a, b):
+    """
+    Expects `a` and `b` to be NumPy arrays (or anything that 
+    behaves similar, e.g. JAX arrays, CuPy arrays).
+
+    shape of `a` and `b` = (...,2); where `...` = any dim.
+    So valid examples are:
+
+    * Shape (2,) → a single 2D vector
+    * Shape (N, 2) → batch of N vectors
+    * Shape (M, N, 2) → grid of vectors
+    * Shape (M, N, K, 2) → high-dimensional tensor of vectors
+
+    In Python, `...` is    <class 'ellipsis'>.
+    see it yourself:       print(type(...))
+    This allows you to write extremely general vectorized functions.
+
+    Example: 
+    a = np.random.randn(10, 20, 2)  # shape (10, 20, 2)
+    a[..., 0].shape  # -> (10, 20)
+    a[..., 1].shape  # -> (10, 20)
+    """
+    return a[..., 0] * b[..., 1] - a[..., 1] * b[..., 0]
+```
