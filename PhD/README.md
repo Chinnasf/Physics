@@ -14,3 +14,4 @@ jupyter nbconvert --to script forward_model_implementation_LIM.ipynb
 ### TO DO
 
 * `../PROD/forward_model_implementation`: WARRRRRNING: THIS ONLY WORK IF ALLL HORIZONTAL ARE ACTIVE! 
+* fix `brigness-channel` plot (`self/`).
