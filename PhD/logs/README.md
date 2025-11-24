@@ -1,3 +1,5 @@
 ## CONTENT | EXTRA VERSION CONTROL
 * 21.11.25 need to keep track of active LOS, I may use `pd.DataFrame` for better plotting.
-  * 21.11.25 Done.   
+ * 24.11.25 Done.   
+* Deje de intentar agergar los LCFS debido a constantes problemas al performar la emici'on. Lo voy a retomar cuando sea proficient en este tema y dejar de perder tiempo en esto.
+ * `mask_points` $\rightarrow$ `2D_interp` + `LCFS_points` 
