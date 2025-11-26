@@ -13,6 +13,8 @@ jupyter nbconvert --to script forward_model_implementation_LIM.ipynb
 
 ### TO DO
 
-* fix `brigness-channel` plot (`self/`).
 * Kalman vs SIAC filters | KTH
 * picPINN
+* _Schemes have been devised for efficiently partitioning the domain into regions governed by different models [38-40], but this level of sophistication was not attempted in the present work_.
+  * Gibbs kernel paper
+  
