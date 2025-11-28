@@ -1,6 +1,10 @@
 ## CONTENT | EXTRA VERSION CONTROL
 
-* 27.11.25 Debug synthetic reconstruction 
+* 27.11.25 Debug synthetic reconstruction
+ * 28.11.25 Done: there were a couple of bugs in missing `**2` or a parentheses misplacement.
+ * **NEXT TO FIX**: malaka, por que chuchas los LOS se ven tan ogts??????????????
+  * pasar a Pytorch, comparar.
+  * Pasar a non-static y luego a Pytorch.
 
 * 21.11.25 need to keep track of active LOS, I may use `pd.DataFrame` for better plotting.
   * 24.11.25 Done.   
