@@ -11,6 +11,10 @@ git push --force-with-lease
 jupyter nbconvert --to script forward_model_implementation_LIM.ipynb
 ```
 
+```Python
+from IPython.core.debugger import Pdb #Pdb().set_trace()
+```
+
 ### TO DO
 
 * Kalman vs SIAC filters | KTH
