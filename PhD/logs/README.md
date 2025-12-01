@@ -3,7 +3,7 @@
 * 27.11.25 Debug synthetic reconstruction
   * 01.12.25 Done.  
 * 28.11.25 Done: there were a couple of bugs in missing `**2` or a parentheses misplacement.
-  * **NEXT TO FIX**: malaka, por que chuchas los LOS se ven tan ogts??????????????
+  * **NEXT TO FIX**:
     * pasar a Pytorch, comparar.
     * Pasar a non-static y luego a Pytorch.
 
