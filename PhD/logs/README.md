@@ -1,5 +1,7 @@
 ## CONTENT | EXTRA VERSION CONTROL
 
+
+* 09.12.25 Zotero: all references; ordered ideas and KTH files: SIAC Filters // Symbolic Regression
 * 27.11.25 Debug synthetic reconstruction
   * 01.12.25 Done.  
 * 28.11.25 Done: there were a couple of bugs in missing `**2` or a parentheses misplacement.
@@ -9,4 +11,5 @@
 * 21.11.25 need to keep track of active LOS, I may use `pd.DataFrame` for better plotting.
   * 24.11.25 Done.   
 * Deje de intentar agregar los LCFS debido a constantes problemas al performar la emisión. Lo voy a retomar cuando sea proficiente en este tema y dejar de perder tiempo en esto.
-  * `mask_points` $\rightarrow$ `2D_interp` + `LCFS_points` 
+  * `mask_points` $\rightarrow$ `2D_interp` + `LCFS_points`
+  
