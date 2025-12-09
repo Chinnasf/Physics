@@ -2,7 +2,7 @@
 
 
 * 09.12.25 Zotero: all references; ordered ideas and KTH files: SIAC Filters // Symbolic Regression
-  * Te quedaste en día 4 (les4) -- creo que esta bien quedarse con los zips.
+  * Te quedaste en día 3 (les4) -- creo que está bien quedarse con los zips.
 * 27.11.25 Debug synthetic reconstruction
   * 01.12.25 Done.  
 * 28.11.25 Done: there were a couple of bugs in missing `**2` or a parentheses misplacement.
