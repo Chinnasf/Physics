@@ -1,6 +1,6 @@
 ## CONTENT | EXTRA VERSION CONTROL
 
-* 10.12.25 Girl, la estás rompiendo procesando los datos de KTH. Te quedaste en el 4to día del github. Falta ver el correo que mandé para el PhD w.r.t. filters.
+* 10.12.25 Girl, la estás rompiendo procesando los datos de KTH. Te quedaste en el [4to día del github](https://github.com/Chinnasf/My-Notes-on-Applied-ML/blob/master/KTH_SS25/lectures/fourth_day.md#introduction-to-pinns-part-one). Falta ver el correo que mandé para el PhD w.r.t. filters.
 * 09.12.25 Zotero: all references; ordered ideas and KTH files: SIAC Filters // Symbolic Regression
   * Te quedaste en día 3 (les4) -- creo que está bien quedarse con los zips.
 * 27.11.25 Debug synthetic reconstruction
