@@ -1,0 +1,17 @@
+```
+main.tex
+preamble.tex
+macros.tex
+frontmatter/
+  prologue.tex
+  toc.tex
+parts/
+  part1.tex
+  part2.tex
+chapters/
+  p1_happy_childhood.tex
+  p1_off_and_away.tex
+  p2_squizofrenia.tex
+references/
+  references.bib
+```
